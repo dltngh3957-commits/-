@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: robur-index
+    env: node
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.11.0
+      - key: NAVER_API_HUB_CLIENT_ID
+        sync: false
+      - key: NAVER_API_HUB_CLIENT_SECRET
+        sync: false
+      - key: SERPAPI_KEY
+        sync: false
